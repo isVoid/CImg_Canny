@@ -1,0 +1,1 @@
+This is a CImg wrapped canny algorithm for edge detection. Code is modified from Hasan's orginal code using OpenCV library.
