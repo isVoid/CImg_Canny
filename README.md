@@ -9,6 +9,8 @@ There are 2 versions of this software, one with interactive command line interfa
 
 I'm rather new to Makefile. Please feel free to update the makefile to make compiling more elegent and quiet.
 
-To build both: make all
-To build interactive version: make Canny
-To build auto version: make auto_canny
+To build both: `make all`
+
+To build interactive version: `make Canny`
+
+To build auto version: make `auto_canny`
