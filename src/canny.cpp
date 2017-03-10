@@ -92,13 +92,11 @@ CImg<unsigned char> canny::process(int gfs = 3, double g_sig = 1, int thres_lo =
 void canny::toGrayScale()
 {
     grayscaled.assign(img._width, img._height); //To one channel
-    // cout << "GrayScaled width, height: " << grayscaled._width << ' ' << grayscaled._height << endl;
     cimg_forXY(img, x, y) {
-        // cout << x << ' ' << y << endl;
+        
         int r = img(x,y,0);
         int g = img(x,y,1);
         int b = img(x,y,2);
-        // cout << "R, G, B for x:" << x << " y:" << y << " are: " << r << ", " << g << ", " << b << endl; 
         double newValue = (r * 0.2126 + g * 0.7152 + b * 0.0722);
 
         grayscaled(x,y) = (unsigned char)(newValue);
