@@ -3,8 +3,10 @@
 //  Canny Edge Detector
 //
 //  Created by Hasan Akgün on 21/03/14.
-//  Copyright (c) 2014 Hasan Akgün. All rights reserved.
+//  Modifed by Michael Wang on 10/03/17.
+//  Software is released under GNU-GPL 2.0
 //
+
 
 #ifndef _CANNY_
 #define _CANNY_
@@ -47,7 +49,10 @@ public:
     void nonMaxSupp(); //Non-maxima supp.
     void threshold(CImg<unsigned char>, int, int); //Double threshold and finalize picture
 
-    void display(bool on);
+    //Boolean to control if needed display or output only
+    //True for display and save
+    //False for save only
+    void displayandsave(bool on);
 
 };
 

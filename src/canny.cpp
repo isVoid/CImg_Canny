@@ -3,7 +3,8 @@
 //  Canny Edge Detector
 //
 //  Created by Hasan Akgün on 21/03/14.
-//  Copyright (c) 2014 Hasan Akgün. All rights reserved.
+//  Modifed by Michael Wang on 10/03/17.
+//  Software is released under GNU-GPL 2.0
 //
 
 #include <iostream>
@@ -27,19 +28,12 @@ canny::canny(const char* name)
 
 }
 
-void canny::display(bool on) {
+void canny::displayandsave(bool on) {
 
         if (on){
             // img.display("Original"); //Original Image
             img_disp = CImgDisplay(img, "Original");
             gray_disp = CImgDisplay(grayscaled, "Grayscale");
-
-            // grayscaled.display("GrayScaled"); // Grayscale
-            // gFiltered.display("Gaussian Blur"); // Gradient
-            // sFiltered.display("Sobel Filtered"); //Sobel Filtered
-            // angles.display("Angle Map, tangent data"); //Angle Map
-            // nonMaxSupped.display("Non-Maxima Supped"); // Non-maxima supp.
-            // thres.display("Final Result"); //Double threshold and final
 
             CImgList<unsigned char> fil_img_list = CImgList<unsigned char>(gFiltered, sFiltered, nonMaxSupped, thres);
             fil_img_disp = CImgDisplay(fil_img_list, "Each Steps");

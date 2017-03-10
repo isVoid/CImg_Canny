@@ -1,10 +1,10 @@
 //
 //  main.cpp
-//  Canny Edge Detector
+//  Canny Edge Detector Lab
 //
-//  Created by Hasan Akgün on 21/03/14.
-//  Copyright (c) 2014 Hasan Akgün. All rights reserved.
-//
+//	Created by Michael Wang, 10/03/17
+//  Software is released under GNU GPL-2.0
+//	
 
 #include <iostream>
 #define _USE_MATH_DEFINES
@@ -89,7 +89,7 @@ void processInput(string c) {
 		cout << "Processing image and output: " << endl;
 		cny.process(gs, g_sig, threslo, threshi);
 		cout << "Done processing" << endl;
-		cny.display(true);
+		cny.displayandsave(true);
 	}
 
 }
