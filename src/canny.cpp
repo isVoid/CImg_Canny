@@ -45,11 +45,11 @@ void canny::displayandsave(bool on) {
 
         char path[256] = "./output/";
         char name[256];
-        sprintf(name, "%s_gfs%d_gsig%.2f_threslo%d_threshi%d.bmp", _name, _gfs, _g_sig, _thres_lo, _thres_hi);
+        sprintf(name, "%s_gfs%d_gsig%.2f_threslo%d_threshi%d.jpeg", _name, _gfs, _g_sig, _thres_lo, _thres_hi);
 
         strcat(path, name);
         cout << "saving to " << path << endl;
-        thres.save(path);
+        thres.save_jpeg(path, 70);
 
 }
 

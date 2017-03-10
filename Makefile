@@ -21,7 +21,7 @@ INCLUDES = -I./include
 
 LIBS = 
 
-LDFLAGS = -lpthread -lX11
+LDFLAGS = -lpthread -lX11 -ljpeg
 
 # define the C source files
 MAINSRCS = ./src/canny.cpp ./src/main.cpp ./src/canny.h

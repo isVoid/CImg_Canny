@@ -12,7 +12,7 @@
 
 using namespace std;
 
-char* name[] = {"lena", "bigben", "stpietro", "twow"};
+char* name[] = {"lena", "bigben", "stpietro", "twows"};
 
 int g_size[4] = {3, 5, 7, 9};
 float g_sig[3] = {0.8, 1.0, 1.2};
@@ -27,14 +27,23 @@ int main()
 		char* n = name[j];
 		cout << "On image " << n << endl;
 
+		cout << "Press return to start test on gaussian size; enter q to skip to next image" << endl;
+		if (cin.get() == 'q') {
+			cin.ignore();
+			continue;
+		}
+
 		for (int i = 0; i < 4; i++) {
 			canny cny(n);
 			cny.process(g_size[i], 1.0, 40, 60);
 			cny.displayandsave(false);
 		}
 
-		cout << "Press any key to start test on gaussian sigma" << endl;
-		cin.get();
+		cout << "Press return to start test on gaussian sigma; enter q to skip to next image" << endl;
+		if (cin.get() == 'q') {
+			cin.ignore();
+			continue;
+		}
 
 		for (int i = 0; i < 3; i++) {
 			// cout << "gsig" << i << endl;
@@ -43,8 +52,11 @@ int main()
 			cny.displayandsave(false);
 		}
 
-		cout << "Press any key to start test on threshold lower bound" << endl;
-		cin.get();
+		cout << "Press return to start test on threshold lower bound; enter q to skip to next image" << endl;
+		if (cin.get() == 'q') {
+			cin.ignore();
+			continue;
+		}
 
 		for (int i = 0; i < 4; i++) {
 			canny cny(n);
@@ -52,8 +64,11 @@ int main()
 			cny.displayandsave(false);
 		}
 
-		cout << "Press any key to start test on threshold upper bound" << endl;
-		cin.get();
+		cout << "Press return to start test on threshold upper bound; enter q to skip to next image" << endl;
+		if (cin.get() == 'q') {
+			cin.ignore();
+			continue;
+		};
 
 		for (int i = 0; i < 4; i++) {
 			canny cny(n);

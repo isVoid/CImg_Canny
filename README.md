@@ -12,5 +12,3 @@ I'm rather new to Makefile. Please feel free to update the makefile to make comp
 To build both: make all
 To build interactive version: make Canny
 To build auto version: make auto_canny
-
-
