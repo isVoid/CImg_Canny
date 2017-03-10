@@ -233,8 +233,8 @@ void canny::nonMaxSupp()
     nonMaxSupped = CImg<unsigned char>(sFiltered._width-2, sFiltered._height-2);
     for (int i=1; i< sFiltered._width - 1; i++) {
         for (int j=1; j<sFiltered._height - 1; j++) {
-            float Tangent = angles(i,j);
-
+            float Tangent = angles(i,j) * 57.296f;
+            // cout << Tangent << ' ';
             nonMaxSupped(i-1, j-1) = sFiltered(i,j);
             //Horizontal Edge
             if (((-22.5 < Tangent) && (Tangent <= 22.5)) || ((157.5 < Tangent) && (Tangent <= -157.5)))
@@ -264,6 +264,7 @@ void canny::nonMaxSupp()
                     nonMaxSupped(i-1, j-1) = 0;
             }
         }
+        // cout << '\n';
     }
 
 }
