@@ -41,16 +41,33 @@ private:
 
 public:
 
-    canny(const char* name); //Constructor
+    //Constructor
+    //@param const char* name : name of the image, path will be auto concatenated to "./output/name.bmp". 
+    canny(const char* name);
 
-    CImg<unsigned char> process(int gfs, double g_sig, int thres_lo, int thres_hi);
+    void toGrayScale();
 
-	void toGrayScale();
-	vector< vector<double> > createFilter(int row, int col, double sigma_in); //Creates a gaussian filter
-	void useFilter(CImg<unsigned char>, vector< vector<double> >); //Use some filter
+    vector< vector<double> > createFilter(int row, int col, double sigma_in); //Creates a gaussian filter
+
+    void useFilter(CImg<unsigned char>, vector< vector<double> >); //Use some filter
+
     void sobel(); //Sobel filtering
+
     void nonMaxSupp(); //Non-maxima supp.
+    
     void threshold(CImg<unsigned char>, int, int); //Double threshold and finalize picture
+
+    //Main Process Function with different parameter setting.
+
+    //@param
+    //int gfs: gaussian filter size, odd number only!!!
+    //double g_sig: gaussian sigma
+    //int thres_lo: lower bound of double thresholding, should be less than higher bound, 0-255.
+    //int thres_hi: uppoer bound of double thresholding, should be higher than lower bound, 0-255.
+
+    //@return
+    //CImg<unsigned char> final result of processed image.
+    CImg<unsigned char> process(int gfs, double g_sig, int thres_lo, int thres_hi);
 
     //Boolean to control if needed display or output only
     //True for display and save
