@@ -47,7 +47,6 @@ void processInput(string c) {
 	}
 	else {
 
-		// string filePath = "./data/" + c + ".bmp"; //Filepath of input image
 		cout << "Loading: " << c << endl;
 	    canny cny(c.c_str());
 
@@ -103,7 +102,7 @@ int main()
 
     	cout << endl;
     	cout << "#\tCanny Algorithm Lab" << endl;
-    	cout << "#\tChoose the image to process: lena, bigben, stpietro, twows" << endl;
+    	cout << "#\tChoose an image to process: lena, bigben, stpietro, twows" << endl;
     	cout << "#\ttype \"q\" to quit program." << endl;
 
     	cin >> command;
